@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ecofund_development
+    volumes:
+      - ecofund_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - ecofund-networks
+volumes:
+  ecofund_data:
+  
+networks:
+  ecofund-networks:
+    driver: bridge
