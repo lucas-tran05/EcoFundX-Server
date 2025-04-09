@@ -5,6 +5,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: ecofund_development
+      TZ: 'GMT+7'
+      PGTZ: 'GMT+7'
     volumes:
       - ecofund_data:/var/lib/postgresql/data
     ports:
