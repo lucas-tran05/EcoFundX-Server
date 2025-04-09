@@ -13,7 +13,7 @@ import { AppService } from '../service/app.service';
       password: 'postgres',
       database: 'ecofund_development',
       entities: [],
-      synchronize: true,
+      synchronize: process.env.NODE_ENV == "development",
     }),
   ],
   controllers: [AppController],
