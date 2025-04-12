@@ -4,6 +4,7 @@ import {
   Column,
   CreateDateColumn,
   ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { Project } from '../../projects/entities/project.entity';
 
@@ -22,5 +23,6 @@ export class ProjectUpdate {
   createAt: Date;
 
   @ManyToOne(() => Project, project => project.updates)
+  @JoinColumn({ name: 'project_id' })
   project: Project;
 }

@@ -6,6 +6,7 @@ import {
   UpdateDateColumn,
   ManyToOne,
   OneToMany,
+  JoinColumn,
 } from 'typeorm';
 import { User } from '../../users/entities/user.entity';
 import { Category } from '../../categories/entities/category.entity';
@@ -51,9 +52,11 @@ export class Project {
   updateAt: Date;
 
   @ManyToOne(() => User, user => user.projects)
+  @JoinColumn({ name: 'user_id' })
   user: User;
 
   @ManyToOne(() => Category, category => category.projects)
+  @JoinColumn({ name: 'category_id' })
   category: Category;
 
   @OneToMany(() => Reward, reward => reward.project)

@@ -6,6 +6,7 @@ import {
   UpdateDateColumn,
   ManyToOne,
   OneToMany,
+  JoinColumn,
 } from 'typeorm';
 import { User } from '../../users/entities/user.entity';
 import { PostComment } from './post-comment.entity';
@@ -28,6 +29,7 @@ export class Post {
   updated_at: Date;
 
   @ManyToOne(() => User, user => user.posts)
+  @JoinColumn({ name: 'user_id' })
   user: User;
 
   @OneToMany(() => PostComment, postComment => postComment.post)

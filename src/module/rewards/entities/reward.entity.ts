@@ -4,6 +4,7 @@ import {
   Column,
   ManyToOne,
   OneToMany,
+  JoinColumn,
 } from 'typeorm';
 import { Project } from '../../projects/entities/project.entity';
 import { Investment } from '../../investments/entities/investment.entity';
@@ -23,6 +24,7 @@ export class Reward {
   minimum_amount: number;
 
   @ManyToOne(() => Project, project => project.rewards)
+  @JoinColumn({ name: 'project_id' })
   project: Project;
 
   @OneToMany(() => Investment, investment => investment.reward)

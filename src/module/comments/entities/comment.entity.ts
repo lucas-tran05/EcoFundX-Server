@@ -4,6 +4,7 @@ import {
   Column,
   CreateDateColumn,
   ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { Project } from '../../projects/entities/project.entity';
 import { User } from '../../users/entities/user.entity';
@@ -20,8 +21,10 @@ export class Comment {
   createAt: Date;
 
   @ManyToOne(() => User, user => user.comments)
+  @JoinColumn({ name: 'user_id' })
   user: User;
 
   @ManyToOne(() => Project, project => project.comments)
+  @JoinColumn({ name: 'project_id' })
   project: Project;
 }

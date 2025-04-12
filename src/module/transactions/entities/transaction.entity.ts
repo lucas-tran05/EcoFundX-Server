@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 import { User } from '../../users/entities/user.entity';
 import { Investment } from '../../investments/entities/investment.entity';
 
@@ -20,8 +26,10 @@ export class Transaction {
   status: string;
 
   @ManyToOne(() => Investment, investment => investment.transactions)
+  @JoinColumn({ name: 'investment_id' })
   investment: Investment;
 
   @ManyToOne(() => User, user => user.transactions)
+  @JoinColumn({ name: 'user_id' })
   user: User;
 }
