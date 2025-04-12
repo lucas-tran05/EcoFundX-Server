@@ -15,6 +15,12 @@ export class User extends ApplicationParanoia {
   @Column({ unique: true })
   phone_number: string;
 
-  @Column({select: false})
+  @Column({ select: false })
   hashed_password: string;
+
+  @Column({ default: 0 })
+  role: number;
+
+  @Column({ default: 0 })
+  login_type: number;
 }
