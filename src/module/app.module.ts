@@ -9,11 +9,11 @@ import { UsersModule } from './users/users.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '127.0.0.1',
+      host: '',
       port: 3306,
-      username: 'root',
-      password: 'dauphuthanhkim00',
-      database: 'eco2',
+      username: '',
+      password: '',
+      database: '',
       entities: [User],
       migrations: ['src/migrations/*.ts'],
       synchronize: process.env.NEST_ENV == 'development',

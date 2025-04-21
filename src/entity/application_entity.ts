@@ -21,9 +21,9 @@ export abstract class ApplicationEntity {
   createdAt: Date;
 
   @UpdateDateColumn({
-    // type: 'timestamptz',
-    // default: 'CURRENT_TIMESTAMP',
-    // onUpdate: 'CURRENT_TIMESTAMP',
+    type: 'timestamptz',
+    default: 'CURRENT_TIMESTAMP',
+    onUpdate: 'CURRENT_TIMESTAMP',
   })
   updatedAt: Date;
 }
