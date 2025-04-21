@@ -1,7 +1,7 @@
 import { DataSource } from 'typeorm';
 
 export const appDataSource = new DataSource({
-  type: 'postgres',
+  type: 'mysql',
   host: 'localhost',
   port: 5432,
   username: 'postgres',
@@ -9,6 +9,6 @@ export const appDataSource = new DataSource({
   database: 'ecofund_development',
   entities: ['src/**/*.entity.ts'],
   migrations: ['priv/migrations/*.ts'],
-  migrationsTableName: "ecofund_migration_table",
+  migrationsTableName: 'ecofund_migration_table',
   synchronize: false,
 });
