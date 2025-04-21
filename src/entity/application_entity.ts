@@ -16,7 +16,8 @@ export abstract class ApplicationEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @CreateDateColumn({ type: 'timestamptz', default: 'CURRENT_TIMESTAMP' })
+  // @CreateDateColumn({ type: 'timestamptz', default: 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn({
