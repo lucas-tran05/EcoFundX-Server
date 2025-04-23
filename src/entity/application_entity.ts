@@ -16,11 +16,12 @@ export abstract class ApplicationEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @CreateDateColumn({ type: 'timestamptz', default: 'CURRENT_TIMESTAMP' })
+  // @CreateDateColumn({ type: 'timestamptz', default: 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn({
-    type: 'timestamptz',
+    type: 'timestamp',
     default: 'CURRENT_TIMESTAMP',
     onUpdate: 'CURRENT_TIMESTAMP',
   })
