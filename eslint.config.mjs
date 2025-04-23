@@ -31,14 +31,14 @@ export default tseslint.config(
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-unsafe-argument': 'warn',
       'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        trailingComma: 'all',
-        arrowParens: 'avoid',
-        endOfLine: 'auto',
-      },
-    ],
+        'error',
+        {
+          singleQuote: true,
+          trailingComma: 'all',
+          arrowParens: 'avoid',
+          endOfLine: 'auto',
+        },
+      ],
     },
   },
 );
