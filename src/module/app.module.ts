@@ -4,7 +4,6 @@ import { AppController } from '../controller/app.controller';
 import { AppService } from '../service/app.service';
 import { User } from 'src/entity/user.entity';
 import { UsersModule } from './users/users.module';
-import { ProjectModule } from './project/project.module';
 import { Project } from 'src/entity/project.entity';
 import { Allocation } from 'src/entity/allocation.entity';
 import { Category } from 'src/entity/category.entity';
@@ -21,11 +20,11 @@ import { PostForum } from 'src/entity/post.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '',
+      host: '127.0.0.1',
       port: 3306,
-      username: '',
-      password: '',
-      database: '',
+      username: 'root',
+      password: 'dauphuthanhkim00',
+      database: 'eco4',
       entities: [
         User,
         Project,
@@ -44,7 +43,6 @@ import { PostForum } from 'src/entity/post.entity';
       synchronize: true,
     }),
     UsersModule,
-    ProjectModule,
     ForumModule,
   ],
   controllers: [AppController],
