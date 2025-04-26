@@ -6,12 +6,13 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class ForumService {
   constructor(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     @InjectRepository(PostForum)
     private postrepo: Repository<PostForum>,
   ) {}
 
-  create(product: Partial<PostForum>) {
-    return this.postrepo.save(product);
+  create(post: Partial<PostForum>) {
+    return this.postrepo.save(post);
   }
 
   findAll() {
@@ -29,8 +30,9 @@ export class ForumService {
     });
   }
 
-  update(id: number, product: Partial<PostForum>) {
-    return this.postrepo.update(id, product);
+  update(id: number, post: Partial<PostForum>) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    return this.postrepo.update(id, post);
   }
 
   remove(id: number) {
