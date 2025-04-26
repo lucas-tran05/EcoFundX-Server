@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, Column, ManyToOne } from 'typeorm';
 import { Project } from './project.entity';
 import { ApplicationEntity } from './application_entity';
 
@@ -10,6 +10,6 @@ export class Allocation extends ApplicationEntity {
   @Column()
   allocation: number;
 
-  @ManyToOne(() => Project, (project) => project.allocations)
+  @ManyToOne(() => Project, project => project.allocations)
   project: Project;
 }

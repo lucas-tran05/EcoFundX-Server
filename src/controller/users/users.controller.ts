@@ -30,8 +30,8 @@ export class UsersController {
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() product: Partial<User>) {
-    return this.userService.update(+id, product);
+  update(@Param('id') id: string, @Body() user: Partial<User>) {
+    return this.userService.update(+id, user);
   }
 
   @Delete(':id')

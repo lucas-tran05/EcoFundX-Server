@@ -4,7 +4,6 @@ import { Project } from './project.entity';
 import { ApplicationParanoia } from './application_paranoia';
 import { User } from './user.entity';
 
-
 @Entity()
 export class Comment extends ApplicationParanoia {
   @Column()
