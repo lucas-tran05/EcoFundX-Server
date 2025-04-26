@@ -2,7 +2,7 @@ import { Column, Entity, OneToMany } from 'typeorm';
 import { ApplicationParanoia } from './application_paranoia';
 import { IsEmail, Length } from 'class-validator';
 import { Investment } from './invesment.entity';
-import { Post } from './post.entity';
+import { PostForum } from './post.entity';
 import { PostComment } from './post_comment.entity';
 import { Project } from './project.entity';
 import { Comment } from './comment.entity';
@@ -39,8 +39,8 @@ export class User extends ApplicationParanoia {
   @OneToMany(() => Comment, comment => comment.user)
   comments: Comment[];
 
-  @OneToMany(() => Post, post => post.user)
-  posts: Post[];
+  @OneToMany(() => PostForum, post => post.user)
+  posts: PostForum[];
 
   @OneToMany(() => PostComment, postComment => postComment.user)
   postComments: PostComment[];

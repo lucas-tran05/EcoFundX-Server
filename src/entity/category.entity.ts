@@ -12,6 +12,6 @@ export class Category extends ApplicationEntity {
   @Column()
   description: string;
 
-  @OneToMany(() => Project, (project) => project.category)
+  @OneToMany(() => Project, project => project.category)
   projects: Project[];
 }
