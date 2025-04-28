@@ -6,7 +6,7 @@ import {
   ManyToOne,
 } from 'typeorm';
 // import { User } from '../../users/entities/user.entity';
-import { Post } from './post.entity';
+import { PostForum } from './post.entity';
 import { User } from './user.entity';
 
 import { ApplicationParanoia } from './application_paranoia';
@@ -18,6 +18,6 @@ export class PostComment extends ApplicationParanoia {
   @ManyToOne(() => User, user => user.postComments)
   user: User;
 
-  @ManyToOne(() => Post, post => post.comments)
-  post: Post;
+  @ManyToOne(() => PostForum, post => post.comments)
+  post: PostForum;
 }

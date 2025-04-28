@@ -5,7 +5,7 @@ import { User } from './user.entity';
 import { PostComment } from './post_comment.entity';
 
 @Entity()
-export class Post extends ApplicationParanoia {
+export class PostForum extends ApplicationParanoia {
   @Column()
   content: string;
 

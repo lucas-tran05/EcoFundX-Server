@@ -18,6 +18,6 @@ export class Transaction extends ApplicationParanoia {
   @Column()
   status: string;
 
-  @ManyToOne(() => Investment, (investment) => investment.transactions)
+  @ManyToOne(() => Investment, investment => investment.transactions)
   investment: Investment;
 }
