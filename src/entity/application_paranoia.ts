@@ -7,6 +7,6 @@ import { ApplicationEntity } from './application_entity';
  */
 @Entity()
 export abstract class ApplicationParanoia extends ApplicationEntity {
-  @Column({ type: 'timestamptz', default: null })
+  @Column({ type: 'timestamp', default: null })
   deletedAt: Date;
 }

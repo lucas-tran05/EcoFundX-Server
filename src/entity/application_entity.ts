@@ -16,13 +16,16 @@ export abstract class ApplicationEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @CreateDateColumn({ type: 'timestamptz', default: 'now()' })
+  @CreateDateColumn({
+    type: 'datetime', // hoặc 'timestamp' nếu chắc DB hỗ trợ
+    // default: () => 'CURRENT_TIMESTAMP', // START giá trị
+  })
   createdAt: Date;
 
   @UpdateDateColumn({
-    type: 'timestamptz',
-    default: 'now()',
-    onUpdate: 'now()',
+    type: 'datetime', // hoặc 'timestamp'
+
+    // onUpdate: 'CURRENT_TIMESTAMP', // tự động cập nhật
   })
   updatedAt: Date;
 }
