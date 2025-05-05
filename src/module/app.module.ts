@@ -15,6 +15,7 @@ import { Reward } from 'src/entity/reward.entity';
 import { Investment } from 'src/entity/invesment.entity';
 import { Transaction } from 'src/entity/transaction.entity';
 import { PostForum } from 'src/entity/post.entity';
+import { ForumModule } from './forum/forum.module';
 
 @Module({
   imports: [
@@ -44,6 +45,7 @@ import { PostForum } from 'src/entity/post.entity';
     }),
     UsersModule,
     ProjectModule,
+    ForumModule,
   ],
   controllers: [AppController],
   providers: [AppService],
